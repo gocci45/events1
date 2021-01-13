@@ -16,7 +16,7 @@ default: &default
   username: root
   password:
   socket: /tmp/mysql.sock
-  charset: utf8mb4
+
 
 development:
   <<: *default
