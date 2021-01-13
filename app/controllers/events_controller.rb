@@ -15,7 +15,9 @@ class EventsController < ApplicationController
     @event = current_user.created_events.build(event_params)
 
     if @event.save
-      redirect_to @event, notice: "作成しました"
+      redirect_to "/"
+    else
+      render :new
     end
   end
 
@@ -26,21 +28,23 @@ class EventsController < ApplicationController
   def update
     @event = current_user.created_events.find(params[:id])
     if @event.update(event_params)
-      redirect_to @event, notice: "更新しました"
+      redirect_to "/"
+    else
+      render :edit
     end
   end
 
   def destroy
     @event = current_user.created_events.find(params[:id])
-    @event.destroy!
-    redirect_to root_path, notice: "削除しました"
+    @event.destroy
+    redirect_to "/"
   end
 
   private
 
   def event_params
     params.require(:event).permit(
-      :name, :place, :image, :remove_image, :content, :start_at, :end_at
+      :name, :place,  :content, :start_at, :end_at
     )
   end
 end
