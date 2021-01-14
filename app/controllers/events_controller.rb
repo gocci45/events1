@@ -15,9 +15,7 @@ class EventsController < ApplicationController
     @event = current_user.created_events.build(event_params)
 
     if @event.save
-      redirect_to root_path
-    else
-      render :new
+      redirect_to @event, notice: "作成しました"
     end
   end
 
@@ -28,16 +26,14 @@ class EventsController < ApplicationController
   def update
     @event = current_user.created_events.find(params[:id])
     if @event.update(event_params)
-      redirect_to root_path
-    else
-      render :edit
+      redirect_to @event, notice: "更新しました"
     end
   end
 
   def destroy
     @event = current_user.created_events.find(params[:id])
     @event.destroy!
-    redirect_to root_path
+    redirect_to root_path, notice: "削除しました"
   end
 
   private
