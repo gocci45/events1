@@ -151,6 +151,7 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
+    mysql2 (0.5.3)
     nio4r (2.5.4)
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
@@ -280,7 +281,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     temple (0.8.2)
     thor (1.0.1)
     thread_safe (0.3.6)
@@ -326,6 +326,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   kaminari (~> 1.2.0)
   listen (~> 3.2)
+  mysql2
   omniauth (~> 1.9.1)
   omniauth-github (~> 1.4.0)
   omniauth-rails_csrf_protection (~> 0.1.2)
@@ -342,7 +343,6 @@ DEPENDENCIES
   simplecov
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
