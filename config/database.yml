@@ -23,5 +23,8 @@ test:
 production:
     <<: *default
     adapter: postgresql
-    encoding: unicode
-    pool: 5
+    database: events1_production
+    username: 
+    password: YYogo0305!!
+    encoding: utf8
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
